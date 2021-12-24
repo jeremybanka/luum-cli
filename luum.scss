@@ -1,0 +1,23 @@
+.foo {
+  --color-bg: #e4f6ff;
+  --color-fg: #00aaff;
+
+  &:focus-within,
+  &:focus,
+  &:hover {
+    --color-bg: #ffffff;
+    --color-fg: #00aaff;
+  }
+
+  &.active,
+  &:active {
+    --color-bg: #00aaff;
+    --color-fg: #00aaff;
+  }
+
+  &.disabled,
+  &:disabled {
+    --color-bg: #000000;
+    --color-fg: #00aaff;
+  }
+}

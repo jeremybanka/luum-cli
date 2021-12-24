@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": "src",
     "paths": {
-      "@app/*": ["*"],
+      "~/*": ["*"],
       "@test/*": ["../test/*"]
     },
     "declaration": true,
@@ -28,5 +28,12 @@
     "target": "ES2019",
     "typeRoots": ["node_modules/@types", "types"]
   },
-  "include": ["src", "test", "jest.config.js", "babel.config.js"]
+  "include": [
+    "src",
+    "test",
+    "jest.config.js",
+    "babel.config.js",
+    "luum.config.ts",
+    "esbuild.config.js"
+  ]
 }

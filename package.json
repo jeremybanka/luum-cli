@@ -1,8 +1,12 @@
 {
-  "name": "mothernode",
+  "name": "luum-cli",
   "private": true,
+  "bin": {
+    "luum": "dist/index.js"
+  },
   "scripts": {
     "start": "node dist/index.js",
+    "go": "y --force && yb && npm i -g && luum write",
     "test": "jest --watch --no-coverage",
     "test:cov": "jest --watch",
     "test:once": "jest",
@@ -10,7 +14,7 @@
     "lint": "eslint \"{src,test}/**/*.ts{,x}\"",
     "lint:fix": "yarn lint -- --fix",
     "prebuild": "rm -rf dist",
-    "build": "tsc --project tsconfig.build.json",
+    "build": "node esbuild.config.js",
     "build:watch": "yarn build -- --watch"
   },
   "devDependencies": {
@@ -24,6 +28,9 @@
     "@types/node": "^16.10.1",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
+    "babel-plugin-root-import": "^6.6.0",
+    "esbuild": "^0.14.2",
+    "esbuild-node-externals": "^1.4.0",
     "eslint": "^8.0.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.25.2",
@@ -48,5 +55,11 @@
     "parserOptions": {
       "project": "./tsconfig.json"
     }
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^8.3.0",
+    "conf": "^10.0.3",
+    "luum": "../luum"
   }
 }
